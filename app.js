@@ -14,7 +14,6 @@ import { welcomeTemplate } from "./templates/welcomeTemplate.js"
 dotenv.config()
 
 const app = express()
-const PORT = process.env.PORT || 5000
 
 app.use(express.json()) //body parser
 app.use(express.urlencoded({ extended: true }))
@@ -85,9 +84,15 @@ async function foo() {
 // foo()
 // cron.schedule('*/2 * * * * ', foo);
 
-app.listen(PORT, () => console.log(`server running on http://localhost:${PORT}`))
 
 
+
+
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`server running on http://localhost:${PORT}`))
+}
 
 // Vercel deployment
 export default app
