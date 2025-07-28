@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 export const dbConnection = () => {
     try {
-        const URI = process.env.mongoDB_URI
+        const URI = 'mongodb+srv://admin:admin@cluster0.t9deziy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
         // Connect mongoDB
         mongoose.connect(URI)

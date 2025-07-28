@@ -18,8 +18,9 @@ const app = express()
 app.use(express.json()) //body parser
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
-
+console.log("before DB connection")
 dbConnection()
+console.log("after DB connection")
 
 
 app.use("/api/auth", authRouter)
@@ -50,7 +51,7 @@ async function foo() {
         }
     })
     console.log("userData", userData)
-    
+
     const transporter = nodemailer.createTransport({
         service: "Gmail",
         host: "smtp.gmail.com",
