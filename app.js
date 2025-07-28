@@ -86,3 +86,8 @@ async function foo() {
 // cron.schedule('*/2 * * * * ', foo);
 
 app.listen(PORT, () => console.log(`server running on http://localhost:${PORT}`))
+
+
+
+// Vercel deployment
+export default app
