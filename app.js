@@ -11,7 +11,7 @@ import cron from "node-cron"
 import UserModel from "./schema/User.js"
 import nodemailer from "nodemailer"
 import { welcomeTemplate } from "./templates/welcomeTemplate.js"
-dotenv.config()
+// dotenv.config()
 
 const app = express()
 
@@ -19,7 +19,7 @@ app.use(express.json()) //body parser
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 console.log("before DB connection")
-// dbConnection()
+dbConnection()
 console.log("after DB connection")
 
 
