@@ -19,7 +19,7 @@ app.use(express.json()) //body parser
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 console.log("before DB connection")
-dbConnection()
+// dbConnection()
 console.log("after DB connection")
 
 
